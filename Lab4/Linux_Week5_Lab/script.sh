@@ -8,13 +8,14 @@ mkdir compressed_files/unknown
 for file_name in $all_files; do
     if [[ $file_name =~ .zip$ ]]; then
         unzip compressed_files/$file_name -d compressed_files/zip
-    elif [[ $file_name =~ .rar$ ]]; thenx
+    elif [[ $file_name =~ .rar$ ]]; then
         unrar x compressed_files/$file_name compressed_files/rar
     elif [[ $file_name =~ .tar.gz$ ]]; then
         tar -xzf compressed_files/$file_name -C compressed_files/tar.gz
     else
-        mv compressed_files/$file_name compressed_files/unknown
+        cp compressed_files/$file_name compressed_files/unknown
     fi
+    rm compressed_files/$file_name
 done
 
 # wrong_list
