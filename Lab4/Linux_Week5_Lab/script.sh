@@ -1,4 +1,5 @@
 all_files=$(ls compressed_files)
+
 mkdir compressed_files/zip
 mkdir compressed_files/rar
 mkdir compressed_files/tar.gz
